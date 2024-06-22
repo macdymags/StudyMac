@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipment Detail</title>
+</head>
+<body>
+    <h1>{{ shipment }}</h1>
+
+    <table>
+        <tr>
+            <th>Sender Name</th>
+            <td>{{ shipment.sender_name }}</td>
+        </tr>
+        <tr>
+            <th>Sender Address</th>
+            <td>{{ shipment.sender_address }}</td>
+        </tr>
+        <tr>
+            <th>Sender ID</th>
+            <td>{{ shipment.sender_id }}</td>
+        </tr>
+        <tr>
+            <th>Receiver Name</th>
+            <td>{{ shipment.receiver_name }}</td>
+        </tr>
+        <tr>
+            <th>Receiver Address</th>
+            <td>{{ shipment.receiver_address }}</td>
+        </tr>
+        <tr>
+            <th>Receiver ID</th>
+            <td>{{ shipment.receiver_id }}</td>
+        </tr>
+        <tr>
+            <th>Package Name</th>
+            <td>{{ shipment.package_name }}</td>
+        </tr>
+        <tr>
+            <th>Quantity</th>
+            <td>{{ shipment.quantity }}</td>
+        </tr>
+        <tr>
+            <th>Package Description</th>
+            <td>{{ shipment.package_description }}</td>
+        </tr>
+        <tr>
+            <th>Shipping Cost</th>
+            <td>{{ shipment.shipping_cost }}</td>
+        </tr>
+        <tr>
+            <th>Amount Paid</th>
+            <td>{{ shipment.amount_paid }}</td>
+        </tr>
+        <tr>
+            <th>Expected Delivery Date</th>
+            <td>{{ shipment.expected_delivery_date }}</td>
+        </tr>
+        <tr>
+            <th>Balance Remaining</th>
+            <td>{{ shipment.balance_remaining }}</td>
+        </tr>
+    </table>
+
+    <h2>Transits</h2>
+    <ul>
+        {% for transit in transits %}
+        <li>
+            <a href="{% url 'transit_detail' transit.pk %}">{{ transit }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipments</title>
+</head>
+<body>
+    <h1>Shipments</h1>
+    <ul>
+        {% for shipment in shipments %}
+        <li>
+            <a href="{% url 'shipment_detail' shipment.pk %}">{{ shipment }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <h1>Transits</h1>
+    <ul>
+        {% for transit in transits %}
+        <li>
+            <a href="{% url 'transit_detail' transit.pk %}">{{ transit }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
